@@ -1,0 +1,29 @@
+@import '../common.scss';
+
+.problem__box {
+    margin: 15px 0;
+
+    @extend .clear__after;
+
+    .problem__box__problem {
+        .problem__box__id {
+            margin-right: 5px;
+        }
+    
+        .problem__box__text {
+    
+        }
+    }
+
+    .problem__box__answers {
+        float: right;
+
+        .problem__box__choices {
+
+        }
+
+        .problem__box__answer {
+            
+        }
+    }
+}

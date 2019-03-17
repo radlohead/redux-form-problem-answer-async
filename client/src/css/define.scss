@@ -1,0 +1,13 @@
+$ColorBlack: #333;
+$ColorBlack30: #f8f8f8;
+$ColorBlack40: #dbdbdb;
+
+$fontSizeBase: 16px;
+
+.clear__after {
+    &:after {
+        content: '';
+        display: block;
+        clear: both;
+    }
+}

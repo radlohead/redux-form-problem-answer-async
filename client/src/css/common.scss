@@ -1,0 +1,29 @@
+@import './define.scss';
+
+* {
+    margin: 0;
+    padding: 0;
+    color: $ColorBlack;
+    font-size: $fontSizeBase;
+  }
+
+  html, body {
+    width: 100%;
+    height: 100%;
+  }
+
+  ul, ol, li {
+    list-style: none;
+  }
+
+  em {
+    font-style: normal;
+  }
+  
+  body {
+    font-family: sans-serif;
+  }
+
+  section {
+    display: block;
+  }
