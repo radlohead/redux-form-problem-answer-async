@@ -84,7 +84,7 @@ class Problem extends React.Component {
 
     renderChoicesFormText(id) {
         return <div>
-            <input type="text" name={id} />
+            <Field type="text" component="input" name={`${CHOICES}_${id}`} />
         </div>
     }
 

@@ -1,4 +1,5 @@
 import axios from 'axios';
+import qs from 'qs';
 
 export const PROBLEM = 'PROBLEM';
 export const PROBLEM_IS_FETCHED = 'PROBLEM_IS_FETCHED';
@@ -26,7 +27,8 @@ export const fetchProblem = () => {
 
 export const fetchSubmit = (post) => {
     return async (dispatch) => {
-        const response = await axios.post('http://localhost:4000/api/submit', post);
+        const response = await axios.post('http://localhost:4000/api/submit', qs.stringify(post));
+        console.log('fetchSubmit', response);
         
         try {
             dispatch({

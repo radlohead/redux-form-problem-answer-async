@@ -5,7 +5,7 @@ class Footer extends React.Component {
     render() {
         return (
             <footer className="footer">
-                <button className="submit">제출</button>
+                <button type="submit" className="submit">제출</button>
             </footer>
         )
     }

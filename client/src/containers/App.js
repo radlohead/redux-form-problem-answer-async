@@ -9,7 +9,8 @@ import '../css/containers/App.scss';
 class App extends Component {
 	handleSubmit(e) {
 		e.preventDefault();
-		const { form } = this.props;
+		const { form, onFetchSubmit } = this.props;
+		onFetchSubmit();
 		console.log(form.app.values);
 	}
 	
