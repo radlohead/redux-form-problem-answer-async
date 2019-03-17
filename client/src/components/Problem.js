@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
+import { Field } from 'redux-form';
 import { fetchProblem } from '../actions';
 import '../css/components/Problem.scss';
 
@@ -75,7 +76,7 @@ class Problem extends React.Component {
             const nowId = Date.now() + Math.random();
             
             return <span key={nowId}>
-                <input type="radio" name={`${CHOICES}_${id}`} value={v} />
+                <Field type="radio" component="input" name={`${CHOICES}_${id}`} value={v.toString()} />
                 <label>{v}</label>
             </span>
         });
