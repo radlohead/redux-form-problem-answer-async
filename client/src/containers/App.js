@@ -10,12 +10,12 @@ class App extends Component {
 	handleSubmit(e) {
 		e.preventDefault();
 		const { form, onFetchSubmit } = this.props;
-		onFetchSubmit([
-			{
-				answer: "3"
-			}
-		]);
-		console.log(form.Problem.values);
+		let result = [];
+		Object.entries(form.Problem.values).forEach(v => {
+			result.push({answer: Object.values(v)[1]});
+		});
+		onFetchSubmit(result);
+		console.log(result);
 	}
 	
 	render() {

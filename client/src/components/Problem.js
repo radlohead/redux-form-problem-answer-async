@@ -49,7 +49,7 @@ class Problem extends React.Component {
             const nowId = Date.now() + Math.random();
 
             return <span key={nowId}>
-                <input type="radio" name={`${ANSWER}_${id}`} value={v} readOnly checked={isChecked} />
+                <input type="radio" name={`${ANSWER}_${id}`} value={i} readOnly checked={isChecked} />
                 <label>{v}</label>
             </span>
         });
@@ -72,11 +72,11 @@ class Problem extends React.Component {
     }
 
     renderChoicesFormRadio(id, choices) {
-        return JSON.parse(choices).map(v => {
+        return JSON.parse(choices).map((v, i) => {
             const nowId = Date.now() + Math.random();
             
             return <span key={nowId}>
-                <Field type="radio" component="input" name={`${CHOICES}_${id}`} value={v.toString()} />
+                <Field type="radio" component="input" name={`${CHOICES}_${id}`} value={(i+1).toString()} />
                 <label>{v}</label>
             </span>
         });
