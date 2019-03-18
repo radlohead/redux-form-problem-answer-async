@@ -27,7 +27,31 @@ export const fetchProblem = () => {
 
 export const fetchSubmit = (post) => {
     return async (dispatch) => {
-        const response = await axios.post('http://localhost:4000/api/submit', qs.stringify(post));
+        // const response = await axios.post('http://localhost:4000/api/submit');
+
+        const response = await axios({
+            headers: {
+                'Content-Type': 'application/x-www-form-urlencoded'
+            },
+            method: 'post',
+            name: 'input',
+            url: 'http://localhost:4000/api/submit',
+            data:  qs.stringify({input: [
+                { answer: 3 },
+                { answer: 3 },
+                { answer: 3 },
+                { answer: 3 },
+                { answer: 3 },
+                { answer: 3 },
+                { answer: 3 },
+                { answer: 3 },
+                { answer: 3 },
+                { answer: 3 },
+                { answer: 3 },
+                { answer: 3 },
+                { answer: 3 }
+            ]})
+        })
         console.log('fetchSubmit', response);
         
         try {

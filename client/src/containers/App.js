@@ -10,8 +10,12 @@ class App extends Component {
 	handleSubmit(e) {
 		e.preventDefault();
 		const { form, onFetchSubmit } = this.props;
-		onFetchSubmit();
-		console.log(form.app.values);
+		onFetchSubmit([
+			{
+				answer: "3"
+			}
+		]);
+		console.log(form.Problem.values);
 	}
 	
 	render() {
@@ -44,5 +48,5 @@ const mapDispatchToProps = (dispatch) => {
 
 const decoratedComponent = connect(mapStateToProps, mapDispatchToProps)(App);
 export default reduxForm({
-	form: 'app'
+	form: 'Problem'
 })(decoratedComponent);

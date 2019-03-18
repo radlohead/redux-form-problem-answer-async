@@ -1,4 +1,5 @@
 module.exports = async (models, req, res) => {
+    req.body.input = JSON.stringify(req.body.input);
     const input = JSON.parse(req.body.input);
     const problems = await models.Problem.findAll({});
     const results = problems.map((problem, idx) => {
