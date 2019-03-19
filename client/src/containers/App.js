@@ -27,7 +27,7 @@ class App extends Component {
 		Object.entries(form.Problem.values).forEach(v => {
 			result.push({answer: Object.values(v)[1]});
 		});
-
+		
 		onFetchSubmit(result);
 	}
 	
