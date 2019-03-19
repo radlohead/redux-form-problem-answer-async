@@ -1,6 +1,6 @@
 ## 설치
 
-    터미널에 npm install 또는 yarn install 을 이용해서 모든 패키지를 설치 합니다.
+    client와 server 두 폴더 모두 package.json에 정의된 모듈을 모두 설치해주세요.
 
 ## 실행
 
