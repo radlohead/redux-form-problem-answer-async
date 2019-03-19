@@ -1,13 +1,30 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import '../css/components/Answer.scss';
 
 class Answer extends React.Component {
     render() {
+        const { submitJSON } = this.props;
+
         return (
             <aside className="answers">
-                Answer..
+                <ul>
+                    {submitJSON.results.map(v => {
+                        return <li key={v.id} className="answers__list">
+                            <span className="answers__list__id">{v.id}.</span>
+                            <span>{v.result ? 'O' : 'X'}</span>
+                        </li>
+                    })}
+                </ul>
             </aside>
         )
     }
 }
 
-export default Answer;
+const mapStateToProps = (state) => {
+    return {
+        submitJSON: state.problem.submitJSON
+    }
+}
+
+export default connect(mapStateToProps)(Answer);

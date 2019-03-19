@@ -11,9 +11,10 @@ class App extends Component {
 		e.preventDefault();
 		const { form, onFetchSubmit } = this.props;
 		let result = [];
-		Object.entries(form.Problem.values).forEach(v => {
-			result.push({answer: Object.values(v)[1]});
-		});
+		// if(!form.Problem.values) return;
+		// Object.entries(form.Problem.values).forEach(v => {
+		// 	result.push({answer: Object.values(v)[1]});
+		// });
 		onFetchSubmit(result);
 		console.log(result);
 	}

@@ -36,7 +36,22 @@ export const fetchSubmit = (post) => {
             method: 'post',
             name: 'input',
             url: 'http://localhost:4000/api/submit',
-            data:  qs.stringify({input: post})
+            // data:  qs.stringify({input: post})
+            data: qs.stringify({input: [
+                { answer: "2"},
+                { answer: "2"},
+                { answer: "2"},
+                {answer: "1"},
+                {answer: "2"},
+                {answer: "3"},
+                { answer: "3"},
+                { answer: "3"},
+                { answer: "3"},
+                { answer: "3"},
+                { answer: "23"},
+                { answer: "6"},
+                { answer: "3"}
+            ]})
         })
         console.log('fetchSubmit', response);
         

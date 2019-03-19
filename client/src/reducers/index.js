@@ -2,7 +2,13 @@ import { reducer as reduxFormReducer } from 'redux-form';
 import { PROBLEM, PROBLEM_IS_FETCHED, PROBLEM_IS_ERROR, SUBMIT_IS_FETCHED, SUBMIT_IS_ERROR } from '../actions';
 import { combineReducers } from 'redux';
 
-const problem = (state = {}, action) => {
+const initialState = {
+    submitJSON: {
+        results: []
+    }
+}
+
+const problem = (state = initialState, action) => {
     switch(action.type) {
         case PROBLEM:
             return {
