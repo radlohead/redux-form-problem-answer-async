@@ -8,6 +8,7 @@ class Answer extends React.Component {
 
         return (
             <aside className="answers">
+                <h2>answer</h2>
                 <ul>
                     {submitJSON.results.map(v => {
                         return <li key={v.id} className="answers__list">
