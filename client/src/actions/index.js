@@ -28,7 +28,6 @@ export const fetchProblem = () => {
 export const fetchSubmit = (post) => {
     return async (dispatch) => {
         const response = await axios.post('http://localhost:4000/api/submit', qs.stringify({input: post}));
-        console.log('fetchSubmit', response);
         
         try {
             dispatch({

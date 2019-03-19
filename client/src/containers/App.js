@@ -11,12 +11,24 @@ class App extends Component {
 		e.preventDefault();
 		const { form, onFetchSubmit } = this.props;
 		let result = [];
-		if(!form.Problem.values) return;
+
+		if(!form.Problem.values) form.Problem.values = {};
+		if(Object.entries(form.Problem.values).length < 13) {
+			const obj = Object.entries(form.Problem.values);
+			const findId = obj.map(v => v[0].replace('CHOICES_', ''));
+			const idList = Array(13).fill(null).map((v, i) => i+1);
+			const findNotId = [...new Set(idList)].filter(v => !(new Set(findId)).has(v.toString()));
+
+			findNotId.forEach(v => {
+				form.Problem.values[`CHOICES_${v}`] = '0';
+			});
+		}
+
 		Object.entries(form.Problem.values).forEach(v => {
 			result.push({answer: Object.values(v)[1]});
 		});
+
 		onFetchSubmit(result);
-		console.log(result);
 	}
 	
 	render() {
