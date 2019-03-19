@@ -2,6 +2,8 @@ import axios from 'axios';
 import qs from 'qs';
 
 export const PROBLEM = 'PROBLEM';
+export const CHOICES = 'CHOICES';
+export const DEFAULT_VALUE = '0';
 export const PROBLEM_IS_FETCHED = 'PROBLEM_IS_FETCHED';
 export const PROBLEM_IS_ERROR = 'PROBLEM_IS_ERROR';
 export const SUBMIT_IS_FETCHED = 'SUBMIT_IS_FETCHED';
